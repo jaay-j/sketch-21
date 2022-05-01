@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Twenty-first Sketch</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="lib/p5.min.js"></script>
+    <script src="lib/p5.sound.js"></script>
+
+
+</head>
+
+<body>
+
+    <script src="javascript/sketch-21.js"></script>
+
+    <h1>Sketch 21</h1>
+    <p> What I made with p5 -- Day 21! </p>
+    <br><br>
+    <img src="img/sketch-21.png">
+
+    <div id="container">
+
+    <h3>
+
+        let myFont; <br>
+        let mySound;<br><br>
+        
+        function preload() {<br>
+          myFont = loadFont('assets/Znikomit.otf')<br>
+          soundFormats('mp3');<br>
+          mySound = loadSound('assets/storm_zapsplat.mp3');<br>
+        }<br><br>
+        
+        function setup() { <br>
+            createCanvas(1000, 1000);<br>
+            mouseCheck(mouseCheck);<br>
+            angleMode(DEGREES);<br>
+            frameRate(120);<br><br>
+        
+            noFill();<br>
+            stroke(255, 204, 0);<br>
+            strokeWeight(3);<br>
+            textSize(30);<br>
+            textFont(myFont);<br>
+            text('N', 10, 10);<br>
+        }<br><br>
+        
+        
+        
+        function draw() {<br><br>
+        
+            mouseCheck();<br><br>
+        
+        }<br><br>
+        
+        function mouseClicked() {<br>
+            startAnim = true;<br>
+        }<br><br>
+        
+        function mouseCheck(){ <br>
+            if (mouseY <= 1000) {<br><br>
+             
+                  background('#66a3b3');<br>
+                mySound.loop();<br>
+                noFill();<br>
+            stroke(255, 204, 0);<br>
+            strokeWeight(1);<br>
+            textSize(500);<br>
+            textFont(myFont);<br>
+            text('N', 280, 690);<br>
+              }<br><br>
+
+              if (mouseY >= 500) {<br><br>
+        
+                  background('#0c0c57');<br>
+                mySound.stop();<br>
+                noFill();<br>
+            stroke(255, 204, 0);<br>
+            strokeWeight(10);<br>
+            textSize(600);<br>
+            textFont(myFont);<br>
+            text('N', 250, 700);<br>
+              } <br>
+        }<br><br>
+        
+        function canvasPressed() {<br>
+                mySound.play();<br>
+        }
+       <br>
+
+</h3>
+</div>
+
+
+<a href="https://jaay-j.github.io/sketch_main" style="font-size:30px; margin:40%; color: rgb(145, 35, 189);"> BACK TO MENU </a> 
+
+</body>
+</html>
